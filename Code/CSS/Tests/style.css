@@ -1,0 +1,16 @@
+.column-layout {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .column-layout div {
+    display: flex;
+    width: 25%;
+    padding: 20px;
+    margin: 10px 0.66%;
+    background: #FFF;
+    box-shadow: 0 0 3px rgba(0,0,0,0.05)
+  }
+  .column-layout:nth-child(2) {
+    width: 5px;
+    background-color: purple;
+  }
