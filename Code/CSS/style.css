@@ -1,6 +1,8 @@
 /*Général*/
 
-html, body {height: 100%;}
+html, body {height: 100%;
+font-size: 100%
+}
 
 #faux_column {
     display:flex;
@@ -50,8 +52,36 @@ footer {
     position:relative;
     left: 33%;
     bottom: 20px;
-    font-size: 40pt;
+    font-size: 3em;
     font-weight: bold;
+}
+
+@media screen and (max-width: 576px) {
+    .top {
+        display:block;
+        text-align: center;
+    }
+    #slogan {
+        left: auto;
+        font-size: 2em;
+        bottom: auto;
+    }
+}
+@media screen and (max-width: 768px) {
+    .top {
+        display:inline;
+        text-align: auto;
+    }
+    #slogan {
+        left: 20%;
+        font-size: 2.5em;
+        bottom: 20px;
+    }
+
+}
+.top img {
+    max-width: 10%;
+    min-width: 200px;
 }
 
 /*Tableau*/
@@ -85,8 +115,8 @@ table img {
 /*Formulaire*/
 
 form {
-    width: 960px;
-    padding: 20px;
+    width: 100%;
+    padding: 15px;
 }
 
 em {
