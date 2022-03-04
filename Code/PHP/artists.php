@@ -30,19 +30,22 @@ $requete->closeCursor();
         <tr>
             <th>ID</th>
             <th>Nom</th>
+            <th>Infos</th>
         </tr>
 
         <?php foreach ($tableau as $artist): ?>
 
-        <?php var_dump($artist); // Le var_dump() est écrit à titre informatif ?>
         <tr>
             <td><?= $artist->artist_id ?></td>
             <td><?= $artist->artist_name ?></td>
+            <td><a href="artist_detail.php?id=<?= $artist->artist_id ?>">Détail</a></td>
         </tr>
 
         <?php endforeach; ?>
 
     </table>
+
+    
 </body>
 </html>
 
