@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -44,6 +41,7 @@ $requete->closeCursor();
         <?php endforeach; ?>
 
     </table>
+    <a href="artist_new.php">Ajouter</a>
 
     
 </body>
