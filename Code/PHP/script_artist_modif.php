@@ -3,7 +3,6 @@
     $id = (isset($_POST['id']) && $_POST['id'] != "") ? $_POST['id'] : Null;
     $nom = (isset($_POST['nom']) && $_POST['nom'] != "") ? $_POST['nom'] : Null;
     $url = (isset($_POST['url']) && $_POST['url'] != "") ? $_POST['url'] : Null;
-    var_dump($url);
  
 
     // En cas d'erreur, on renvoie vers le formulaire
@@ -32,7 +31,7 @@
     }
 
     catch (Exception $e) {
-        echo "Erreur : " . $requete->errorInfo()[2] . "<br>";
+        echo "Erreur : " . $requete->errorInfo()[2] . $e->getMessage() . "<br>";
         die("Fin du script (script_artist_modif.php)");
     }
 

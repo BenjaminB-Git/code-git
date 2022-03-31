@@ -21,7 +21,7 @@
 
 <body>
     <div class="container">
-        <input type="button" class="btn btn-primary" value="Retour à l'accueil" id="retour"><br>
+        <br>
         <img class="justify-content-center" src="jaquettes/<?= $myDisc->disc_picture ?>"><br>
         <b>Title:</b> <?= $myDisc->disc_title ?><br>
         <b>Artist:</b> <?= $myDisc->artist_name ?><br>
@@ -31,6 +31,7 @@
         <b>Price:</b> $<?= $myDisc->disc_price ?><br>
         <input type="button" class="btn btn-primary" value="Modifier" id="modifier">
         <input type="button" class="btn btn-primary" value="Supprimer" id="supprimer">
+        <input type="button" class="btn btn-primary" value="Retour à l'accueil" id="retour">
         <input type="hidden" id="idDisc" value="<?= $myDisc->disc_id ?>">
         
 

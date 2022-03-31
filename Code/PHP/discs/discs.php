@@ -22,13 +22,17 @@ $requete->closeCursor();
 
 ?>
     <div class="container">
-        <h1>Liste des albums</h1>
+        <div class="row">
+            <div class="h1 font-weight-bold col-12 col-lg-6">Liste des albums</div>
+            <div class="col-12 col-lg-6 text-lg-right"><a href="disc_ajout.php" class="btn btn-primary" id="ajout">Ajouter</a></div>
+        </div>
+        
 
         <div class="row">
         <?php foreach ($tableau as $disc): ?>
             <div class="col-12 col-lg-6">
                 <table>
-                    <td><img class="img-responsive" src="jaquettes/<?= $disc->disc_picture ?>" width="200" margin-right="15"></td>
+                    <td><img class="img-responsive" src="jaquettes/<?= $disc->disc_picture ?>" width="200em" margin-right="15"></td>
                     <td>
                         <div class="col justify-content-between">
                         <div>
@@ -39,7 +43,7 @@ $requete->closeCursor();
                             <b>Genre:</b> <?= $disc->disc_genre ?>
                         </div>
                         <div>
-                            <input type="button" class="btn btn-primary" onclick=window.location.href="disc_detail.php?id=<?= $disc->disc_id ?>" value="Détails">
+                            <a href="disc_detail.php?id=<?= $disc->disc_id ?>" class="btn btn-primary" name="<?= $disc->disc_id ?>" id="detail">Détails</a>
                         </div>
                         </div>
                     </td>
