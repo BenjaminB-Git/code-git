@@ -32,7 +32,7 @@ $requete->closeCursor();
         <?php foreach ($tableau as $disc): ?>
             <div class="col-12 col-lg-6">
                 <table>
-                    <td><img class="img-responsive" src="jaquettes/<?= $disc->disc_picture ?>" width="200em" margin-right="15"></td>
+                    <td><img alt ="pochette <?= $disc->disc_title ?>" title ="<?= $disc->disc_title ?> - <?= $disc->artist_name ?>" class="img-responsive" src="jaquettes/<?= $disc->disc_picture ?>" width="200em" margin-right="15"></td>
                     <td>
                         <div class="col justify-content-between">
                         <div>

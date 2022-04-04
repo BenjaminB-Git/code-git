@@ -22,31 +22,32 @@
 <body>
     <div class="container">
 
-        <form action="script_disc_modif.php" enctype="multipart/form-data" method="post" id="form_modif">
+        <form action="test_upload.php?id=<?= $myDisc->disc_id ?>" enctype="multipart/form-data" method="post" id="form_modif">
         <div class="form-group">
             <fieldset>
                 <legend>Modifier le vinyle</legend>
                 <input type="hidden" name="idDisc" id="idDisc" value="<?= $myDisc->disc_id ?>">
                 <label for="title">Title</label>
-                    <input class="form-control" type="text" name="title" id="title_for_disc" value="<?= $myDisc->disc_title ?>"><br>
+                    <input class="form-control" type="text" name="title" id="title_for_disc" value="<?= $myDisc->disc_title ?>"> <i id="par_title"></i><br>
 
                 <label for="artist">Artist</label>
                     <select class="form-control" name="artist" id="artist_for_disc">
+                        <option value ="" selected disabled>Choisissez un artiste</option>
                         <?php foreach ($tableau as $artist): ?>
                             <option value ="<?= $artist->artist_id ?>"><?= $artist->artist_name ?></option>
                         <?php endforeach ?>
-                    </select><br>
+                    </select><i id="par_artist"></i><br>
                 <label for="year">Year</label>
-                    <input class="form-control" type="text" name="year" id="year_for_disc" value="<?= $myDisc->disc_year ?>"><br>
+                    <input class="form-control" type="text" name="year" id="year_for_disc" value="<?= $myDisc->disc_year ?>"><i id="par_year"></i><br>
                 <label for="genre">Genre</label>
-                    <input class="form-control" type="text" name="genre" id="genre_for_disc" value="<?= $myDisc->disc_genre ?>"><br>
+                    <input class="form-control" type="text" name="genre" id="genre_for_disc" value="<?= $myDisc->disc_genre ?>"><i id="par_genre"></i><br>
                 <label for="label">Label</label>
-                    <input class="form-control" type="text" name="label" id="label_for_disc" value="<?= $myDisc->disc_label ?>"><br>
+                    <input class="form-control" type="text" name="label" id="label_for_disc" value="<?= $myDisc->disc_label ?>"><i id="par_label"></i><br>
                 <label for="price">Price</label>
-                    <input class="form-control" type="text" name="price" id="price_for_disc" value="<?= $myDisc->disc_price ?>"><br>
+                    <input class="form-control" type="text" name="price" id="price_for_disc" value="<?= $myDisc->disc_price ?>"><i id="par_price"></i><br>
                 <label for="picture">Picture</label><br>
-                    <input type="file" name="picture" id="picture_for_disc"><br>
-
+                    <input type="file" name="picture" id="picture_for_disc" accept=".jpg, .png, .jpeg" name="picture_for_disc"><br>
+                <div id="preview_image"><img src="jaquettes/<?= $myDisc->disc_picture ?>"></div>
 
             </fieldset>
             <input class="btn btn-primary envoi_form" type="button" id="valid_update" name="upload" value="Envoyer">
