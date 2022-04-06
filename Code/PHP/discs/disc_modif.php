@@ -22,7 +22,7 @@
 <body>
     <div class="container">
 
-        <form action="test_upload.php?id=<?= $myDisc->disc_id ?>" enctype="multipart/form-data" method="post" id="form_modif">
+        <form action="script_disc_modif.php?id=<?= $myDisc->disc_id ?>" enctype="multipart/form-data" method="post" id="form_modif">
         <div class="form-group">
             <fieldset>
                 <legend>Modifier le vinyle</legend>
@@ -45,12 +45,14 @@
                     <input class="form-control" type="text" name="label" id="label_for_disc" value="<?= $myDisc->disc_label ?>"><i id="par_label"></i><br>
                 <label for="price">Price</label>
                     <input class="form-control" type="text" name="price" id="price_for_disc" value="<?= $myDisc->disc_price ?>"><i id="par_price"></i><br>
-                <label for="picture">Picture</label><br>
+                <label for="picture">Picture <i>(si aucun fichier n'est uploadé, l'image restera inchangée)</i></label><br>
                     <input type="file" name="picture" id="picture_for_disc" accept=".jpg, .png, .jpeg" name="picture_for_disc"><br>
-                <div id="preview_image"><img src="jaquettes/<?= $myDisc->disc_picture ?>"></div>
 
             </fieldset>
+            <br>
             <input class="btn btn-primary envoi_form" type="button" id="valid_update" name="upload" value="Envoyer">
+            <a class="btn btn-primary" href="disc_detail.php?id=<?= $myDisc->disc_id ?>">Retour au disque</a>
+            <a class="btn btn-primary" href="discs.php">Retour à l'accueil</a>
         </div>
         </form>
 

@@ -23,7 +23,7 @@ $requete->closeCursor();
 ?>
     <div class="container">
         <div class="row">
-            <div class="h1 font-weight-bold col-12 col-lg-6">Liste des albums</div>
+            <div class="h1 font-weight-bold col-12 col-lg-6">Liste des albums (<?= count($tableau) ?>)</div>
             <div class="col-12 col-lg-6 text-lg-right"><a href="disc_ajout.php" class="btn btn-primary" id="ajout">Ajouter</a></div>
         </div>
         

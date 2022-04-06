@@ -13,7 +13,7 @@
     // En cas d'erreur, on renvoie vers le formulaire
     if ($nom == Null || $url == Null) {
         header("Location: artist_new.php");
-    }
+    };
 
     // S'il n'y a pas eu de redirection vers le formulaire (= si la vérification des données est ok) :
     require "record.php"; 

@@ -22,7 +22,7 @@
 <body>
     <div class="container">
         <br>
-        <img class="justify-content-center" src="jaquettes/<?= $myDisc->disc_picture ?>"><br>
+        <img src="jaquettes/<?= $myDisc->disc_picture ?>" width="600rem"><br>
         <b>Title:</b> <?= $myDisc->disc_title ?><br>
         <b>Artist:</b> <?= $myDisc->artist_name ?><br>
         <b>Date:</b> <?= $myDisc->disc_year ?><br>
