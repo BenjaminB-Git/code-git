@@ -80,11 +80,10 @@
             echo("Erreur : " . $requete->errorInfo()[2] . $e->getMessage() . "<br>");
             die("Fin du script (script_disc_modif.php)");
         }
-    echo("Succès !");
-    exit;
 
-    //header("Location:discs.php");
-    //exit;
+        
+    header("Location:discs.php");
+    exit;
 
 
 

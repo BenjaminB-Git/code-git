@@ -21,7 +21,7 @@ const supprimer = document.querySelector("#supprimer");
 supprimer.addEventListener('click', () => {
     if(confirm("Êtes-vous sûr.e de vouloir supprimer cet album"))
     {
-        document.location.href = 'discs.php';
+        document.location.href = 'script_disc_suppr.php?id=' + idDisc;
     };
 
 });
