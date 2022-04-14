@@ -54,7 +54,9 @@
             <a class="btn btn-primary" href="disc_detail.php?id=<?= $myDisc->disc_id ?>">Retour au disque</a>
             <a class="btn btn-primary" href="discs.php">Retour à l'accueil</a>
         </div>
-        </form>
+        </form> <br>
+
+        <a href="pw_modif.php">Si tu es un dev nul qui oublie ses mots de passes, clique ici</a>
 
 
 
