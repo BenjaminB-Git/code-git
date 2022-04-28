@@ -1,0 +1,8 @@
+USE papyrus;
+
+LOAD DATA LOCAL INFILE '/home/benjamin/Bureau/Git/Code/Evaluation Mise en place BDD/vente.csv'
+INTO TABLE vente
+FIELDS TERMINATED BY ';' 
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(NUMFOU,CODART,DELLIV,QTE1,PRIX1,QTE2,PRIX2,QTE3,PRIX3);
