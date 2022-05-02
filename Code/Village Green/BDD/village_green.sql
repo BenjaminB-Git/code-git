@@ -39,7 +39,7 @@ CREATE TABLE utilisateur(
    PRIMARY KEY(uti_id)
 );
 
-CREATE TABLE art_prix_ht(
+CREATE TABLE article(
    art_id INT NOT NULL AUTO_INCREMENT,
    art_nom VARCHAR(100) NOT NULL,
    art_description TEXT(1000),
@@ -47,6 +47,8 @@ CREATE TABLE art_prix_ht(
    art_taux_tva DECIMAL(4,3) NOT NULL,
    art_tva DECIMAL(9,2) NOT NULL,
    art_prix_ttc DECIMAL(9,2) NOT NULL,
+   art_prix_fournisseur_ht DECIMAL(9,2) NOT NULL,
+   art_prix_fournisseur_ttc DECIMAL(9,2) NOT NULL,
    art_stock INT NOT NULL,
    fou_id INT NOT NULL,
    PRIMARY KEY(art_id),
@@ -76,5 +78,5 @@ CREATE TABLE detail(
    art_id INT NOT NULL,
    PRIMARY KEY(det_id),
    FOREIGN KEY(com_id) REFERENCES commande(com_id),
-   FOREIGN KEY(art_id) REFERENCES art_prix_ht(art_id)
+   FOREIGN KEY(art_id) REFERENCES article(art_id)
 );
