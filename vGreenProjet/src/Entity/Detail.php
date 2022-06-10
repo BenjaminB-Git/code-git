@@ -28,15 +28,9 @@ class Detail
     #[ORM\Column(type: 'datetime', nullable: true)]
     private $detDatePaiement;
 
-    #[ORM\ManyToOne(targetEntity: Livraison::class, inversedBy: 'details')]
-    private $livraison;
-
     #[ORM\ManyToOne(targetEntity: Commande::class, inversedBy: 'details')]
     #[ORM\JoinColumn(nullable: false)]
     private $commande;
-
-    #[ORM\ManyToOne(targetEntity: Facture::class, inversedBy: 'details')]
-    private $facture;
 
     #[ORM\ManyToOne(targetEntity: Article::class, inversedBy: 'details')]
     #[ORM\JoinColumn(nullable: false)]
@@ -107,18 +101,6 @@ class Detail
         return $this;
     }
 
-    public function getLivraison(): ?Livraison
-    {
-        return $this->livraison;
-    }
-
-    public function setLivraison(?Livraison $livraison): self
-    {
-        $this->livraison = $livraison;
-
-        return $this;
-    }
-
     public function getCommande(): ?Commande
     {
         return $this->commande;
@@ -127,18 +109,6 @@ class Detail
     public function setCommande(?Commande $commande): self
     {
         $this->commande = $commande;
-
-        return $this;
-    }
-
-    public function getFacture(): ?Facture
-    {
-        return $this->facture;
-    }
-
-    public function setFacture(?Facture $facture): self
-    {
-        $this->facture = $facture;
 
         return $this;
     }

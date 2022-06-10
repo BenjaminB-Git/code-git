@@ -27,6 +27,27 @@ class Commande
     #[ORM\Column(type: 'text', nullable: true)]
     private $comCommentaire;
 
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $comAdresseFacture;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $comAdresseFacture2;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $comAdresseFacture3;
+
+    #[ORM\Column(type: 'string', length: 5, nullable: true)]
+    private $comCodePostalFacture;
+
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $comCommuneFacture;
+
+
+
+    
+
+
+
     #[ORM\ManyToOne(targetEntity: Utilisateur::class, inversedBy: 'commandes')]
     #[ORM\JoinColumn(nullable: false)]
     private $utilisateur;
@@ -34,9 +55,15 @@ class Commande
     #[ORM\OneToMany(mappedBy: 'commande', targetEntity: Detail::class, orphanRemoval: true)]
     private $details;
 
+    #[ORM\OneToMany(mappedBy: 'commande', targetEntity: Livraison::class, orphanRemoval: true)]
+    private $livraisons;
+
+
     public function __construct()
     {
         $this->details = new ArrayCollection();
+        $this->livraisons = new ArrayCollection();
+
     }
 
     public function getId(): ?int
@@ -92,6 +119,66 @@ class Commande
         return $this;
     }
 
+    public function getComAdresseFacture(): ?string
+    {
+        return $this->comAdresseFacture;
+    }
+
+    public function setComAdresseFacture(?string $comAdresseFacture): self
+    {
+        $this->comAdresseFacture = $comAdresseFacture;
+
+        return $this;
+    }
+
+    public function getComAdresseFacture2(): ?string
+    {
+        return $this->comAdresseFacture2;
+    }
+
+    public function setComAdresseFacture2(?string $comAdresseFacture2): self
+    {
+        $this->comAdresseFacture2 = $comAdresseFacture2;
+
+        return $this;
+    }
+
+    public function getComAdresseFacture3(): ?string
+    {
+        return $this->comAdresseFacture3;
+    }
+
+    public function setComAdresseFacture3(?string $comAdresseFacture3): self
+    {
+        $this->comAdresseFacture3 = $comAdresseFacture3;
+
+        return $this;
+    }
+
+    public function getComCodePostalFacture(): ?string
+    {
+        return $this->comCodePostalFacture;
+    }
+
+    public function setComCodePostalFacture(?string $comCodePostalFacture): self
+    {
+        $this->comCodePostalFacture = $comCodePostalFacture;
+
+        return $this;
+    }
+
+    public function getComCommuneFacture(): ?string
+    {
+        return $this->comCommuneFacture;
+    }
+
+    public function setComCommuneFacture(?string $comCommuneFacture): self
+    {
+        $this->comCommuneFacture = $comCommuneFacture;
+
+        return $this;
+    }
+    
     public function getUtilisateur(): ?Utilisateur
     {
         return $this->utilisateur;
@@ -133,4 +220,35 @@ class Commande
 
         return $this;
     }
+
+    /**
+     * @return Collection<int, Livraison>
+     */
+    public function getLivraisons(): Collection
+    {
+        return $this->livraisons;
+    }
+
+    public function addLivraison(Livraison $livraison): self
+    {
+        if (!$this->livraisons->contains($livraison)) {
+            $this->livraisons[] = $livraison;
+            $livraison->setCommande($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLivraison(Livraison $livraison): self
+    {
+        if ($this->livraisons->removeElement($livraison)) {
+            // set the owning side to null (unless already changed)
+            if ($livraison->getCommande() === $this) {
+                $livraison->setCommande(null);
+            }
+        }
+
+        return $this;
+    }
+
 }

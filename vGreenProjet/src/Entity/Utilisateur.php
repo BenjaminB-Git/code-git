@@ -52,19 +52,11 @@ class Utilisateur
     #[ORM\Column(type: 'string', length: 20, nullable: true)]
     private $utiTelephoneMobile;
 
-    #[ORM\OneToMany(mappedBy: 'Utilisateur', targetEntity: Livraison::class, orphanRemoval: true)]
-    private $livraisons;
-
     #[ORM\OneToMany(mappedBy: 'utilisateur', targetEntity: Commande::class, orphanRemoval: true)]
     private $commandes;
 
-    #[ORM\OneToMany(mappedBy: 'utilisateur', targetEntity: Facture::class, orphanRemoval: true)]
-    private $factures;
-
-
     public function __construct()
     {
-        $this->livraisons = new ArrayCollection();
         $this->commandes = new ArrayCollection();
     }
 
@@ -218,36 +210,6 @@ class Utilisateur
     }
 
     /**
-     * @return Collection<int, Livraison>
-     */
-    public function getLivraisons(): Collection
-    {
-        return $this->livraisons;
-    }
-
-    public function addLivraison(Livraison $livraison): self
-    {
-        if (!$this->livraisons->contains($livraison)) {
-            $this->livraisons[] = $livraison;
-            $livraison->setUtilisateur($this);
-        }
-
-        return $this;
-    }
-
-    public function removeLivraison(Livraison $livraison): self
-    {
-        if ($this->livraisons->removeElement($livraison)) {
-            // set the owning side to null (unless already changed)
-            if ($livraison->getUtilisateur() === $this) {
-                $livraison->setUtilisateur(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
      * @return Collection<int, Commande>
      */
     public function getCommandes(): Collection
@@ -277,33 +239,4 @@ class Utilisateur
         return $this;
     }
 
-    /**
-     * @return Collection<int, Facture>
-     */
-    public function getFactures(): Collection
-    {
-        return $this->factures;
-    }
-
-    public function addFacture(Facture $facture): self
-    {
-        if (!$this->factures->contains($facture)) {
-            $this->factures[] = $facture;
-            $facture->setUtilisateur($this);
-        }
-
-        return $this;
-    }
-
-    public function removeFacture(Facture $facture): self
-    {
-        if ($this->factures->removeElement($facture)) {
-            // set the owning side to null (unless already changed)
-            if ($facture->getUtilisateur() === $this) {
-                $facture->setUtilisateur(null);
-            }
-        }
-
-        return $this;
-    }
 }

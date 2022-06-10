@@ -55,9 +55,15 @@ class Article
     #[ORM\OneToMany(mappedBy: 'article', targetEntity: Detail::class, orphanRemoval: true)]
     private $details;
 
+    #[ORM\OneToMany(mappedBy: 'article', targetEntity: Livraison::class, orphanRemoval: true)]
+    private $livraisons;
+
+
     public function __construct()
     {
         $this->details = new ArrayCollection();
+        $this->livraisons = new ArrayCollection();
+
     }
 
     public function getId(): ?int
@@ -238,4 +244,35 @@ class Article
 
         return $this;
     }
+
+        /**
+     * @return Collection<int, Livraison>
+     */
+    public function getLivraisons(): Collection
+    {
+        return $this->livraisons;
+    }
+
+    public function addLivraison(Livraison $livraison): self
+    {
+        if (!$this->livraisons->contains($livraison)) {
+            $this->livraisons[] = $livraison;
+            $livraison->setArticle($this);
+        }
+
+        return $this;
+    }
+
+    public function removeLivraison(Livraison $livraison): self
+    {
+        if ($this->livraisons->removeElement($livraison)) {
+            // set the owning side to null (unless already changed)
+            if ($livraison->getArticle() === $this) {
+                $livraison->setArticle(null);
+            }
+        }
+
+        return $this;
+    }
+
 }

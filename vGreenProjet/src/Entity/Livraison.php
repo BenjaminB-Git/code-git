@@ -45,16 +45,20 @@ class Livraison
     #[ORM\Column(type: 'string', length: 255)]
     private $livCommune;
 
-    #[ORM\ManyToOne(targetEntity: Utilisateur::class, inversedBy: 'livraisons')]
-    #[ORM\JoinColumn(nullable: false)]
-    private $Utilisateur;
+    #[ORM\Column(type: 'integer', nullable: true)]
+    private $livQuantiteArticle;
 
-    #[ORM\OneToMany(mappedBy: 'livraison', targetEntity: Detail::class)]
-    private $details;
+
+    #[ORM\ManyToOne(targetEntity: Commande::class, inversedBy: 'livraisons')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $Commande;
+
+    #[ORM\OneToMany(mappedBy: 'livraison', targetEntity: Article::class)]
+    private $articles;
 
     public function __construct()
     {
-        $this->details = new ArrayCollection();
+        $this->articles = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -182,42 +186,54 @@ class Livraison
         return $this;
     }
 
-    public function getUtilisateur(): ?Utilisateur
+    public function getLivQuantiteArticle(): ?int
     {
-        return $this->Utilisateur;
+        return $this->livQuantiteArticle;
     }
 
-    public function setUtilisateur(?Utilisateur $Utilisateur): self
+    public function setLivQuantiteArticle(int $livQuantiteArticle): self
     {
-        $this->Utilisateur = $Utilisateur;
+        $this->livQuantiteArticle = $livQuantiteArticle;
+
+        return $this;
+    }
+
+    public function getCommande(): ?Commande
+    {
+        return $this->Commande;
+    }
+
+    public function setCommande(?Commande $Commande): self
+    {
+        $this->Commande = $Commande;
 
         return $this;
     }
 
     /**
-     * @return Collection<int, Detail>
+     * @return Collection<int, Article>
      */
-    public function getDetails(): Collection
+    public function getArticles(): Collection
     {
-        return $this->details;
+        return $this->articles;
     }
 
-    public function addDetail(Detail $detail): self
+    public function addArticle(Article $article): self
     {
-        if (!$this->details->contains($detail)) {
-            $this->details[] = $detail;
-            $detail->setLivraison($this);
+        if (!$this->articles->contains($article)) {
+            $this->articles[] = $article;
+            $article->setLivraison($this);
         }
 
         return $this;
     }
 
-    public function removeDetail(Detail $detail): self
+    public function removeArticle(Article $article): self
     {
-        if ($this->details->removeElement($detail)) {
+        if ($this->articles->removeElement($article)) {
             // set the owning side to null (unless already changed)
-            if ($detail->getLivraison() === $this) {
-                $detail->setLivraison(null);
+            if ($article->getLivraison() === $this) {
+                $article->setLivraison(null);
             }
         }
 

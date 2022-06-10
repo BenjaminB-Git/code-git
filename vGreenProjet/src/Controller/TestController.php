@@ -15,4 +15,14 @@ class TestController extends AbstractController
             'controller_name' => 'TestController',
         ]);
     }
+
+    #[Route('/quisommesnous', name: 'qui_sommes_nous')]
+    public function quisommesnous(): Response
+    {
+        return $this->render('test/quisommesnous.html.twig', [
+            'controller_name' => 'TestController',
+        ]);
+    }
+
+
 }
