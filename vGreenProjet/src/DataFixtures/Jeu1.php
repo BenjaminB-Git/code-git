@@ -18,72 +18,93 @@ class Jeu1 extends Fixture
     {
         $faker = Faker\Factory::create('fr_FR');
 
-        $categorie1 = new Categorie();
-        $categorie1->setCatNom("Instruments à cordes");
+        $catCordes = new Categorie();
+        $catCordes->setCatNom("Instruments à cordes");
         
-        $manager->persist($categorie1);
+        $manager->persist($catCordes);
 
-        $categorie2 = new Categorie();
-        $categorie2->setCatNom("Instruments à vents");
+        $catVents = new Categorie();
+        $catVents->setCatNom("Instruments à vents");
         
-        $manager->persist($categorie2);
+        $manager->persist($catVents);
 
-        $categorie3 = new Categorie();
-        $categorie3->setCatNom("Percussions");
+        $catPercu = new Categorie();
+        $catPercu->setCatNom("Percussions");
 
-        $manager->persist($categorie3);
+        $manager->persist($catPercu);
 
         $souscategories = Array();
 
-        $souscategorie1 = new SousCategorie();
-        $souscategorie1->setSouCatNom("Guitares");
-        $souscategorie1->setCategorie($categorie1);
+        $ssCatGuitares = new SousCategorie();
+        $ssCatGuitares->setSouCatNom("Guitares");
+        $ssCatGuitares->setCategorie($catCordes);
 
-        $manager->persist($souscategorie1);
+        $manager->persist($ssCatGuitares);
 
-        array_push($souscategories, $souscategorie1);
+        array_push($souscategories, $ssCatGuitares);
 
-        $souscategorie2 = new SousCategorie();
-        $souscategorie2->setSouCatNom("Violons");
-        $souscategorie2->setCategorie($categorie1);
+        $ssCatViolons = new SousCategorie();
+        $ssCatViolons->setSouCatNom("Violons/Fiddles");
+        $ssCatViolons->setCategorie($catCordes);
 
-        $manager->persist($souscategorie2);
+        $manager->persist($ssCatViolons);
 
-        array_push($souscategories, $souscategorie2);
+        $ssCatHarpes = new SousCategorie();
+        $ssCatHarpes->setSouCatNom("Harpes");
+        $ssCatHarpes->setCategorie($catCordes);
 
+        $manager->persist($ssCatHarpes);
 
-        $souscategorie3 = new SousCategorie();
-        $souscategorie3->setSouCatNom("Saxophones");
-        $souscategorie3->setCategorie($categorie2);
+        array_push($souscategories, $ssCatViolons);
 
-        $manager->persist($souscategorie3);
+        $ssCatViolons = new SousCategorie();
+        $ssCatViolons->setSouCatNom("Violons");
+        $ssCatViolons->setCategorie($catCordes);
 
-        array_push($souscategories, $souscategorie3);
+        $manager->persist($ssCatViolons);
 
+        array_push($souscategories, $ssCatViolons);
 
-        $souscategorie4 = new SousCategorie();
-        $souscategorie4->setSouCatNom("Flûtes");
-        $souscategorie4->setCategorie($categorie2);
+        $ssCatCornemuses = new SousCategorie();
+        $ssCatCornemuses->setSouCatNom("Cornemuses");
+        $ssCatCornemuses->setCategorie($catVents);
 
-        $manager->persist($souscategorie4);
+        $manager->persist($ssCatCornemuses);
 
-        array_push($souscategories, $souscategorie4);
+        array_push($souscategories, $ssCatCornemuses);
 
-        $souscategorie5 = new SousCategorie();
-        $souscategorie5->setSouCatNom("Batteries");
-        $souscategorie5->setCategorie($categorie3);
+        $ssCatFlutes = new SousCategorie();
+        $ssCatFlutes->setSouCatNom("Flûtes");
+        $ssCatFlutes->setCategorie($catVents);
 
-        array_push($souscategories, $souscategorie5);
+        $manager->persist($ssCatFlutes);
 
-        $manager->persist($souscategorie5);
+        array_push($souscategories, $ssCatFlutes);
+
+        $ssCatBombos = new SousCategorie();
+        $ssCatBombos->setSouCatNom("Bombos");
+        $ssCatBombos->setCategorie($catPercu);
+
+        array_push($souscategories, $ssCatBombos);
+
+        $manager->persist($ssCatBombos);
         
-        $souscategorie6 = new SousCategorie();
-        $souscategorie6->setSouCatNom("Bodhran");
-        $souscategorie6->setCategorie($categorie3);
+        $ssCatBodhrans = new SousCategorie();
+        $ssCatBodhrans->setSouCatNom("Bodhran");
+        $ssCatBodhrans->setCategorie($catPercu);
 
-        array_push($souscategories, $souscategorie6);
+        array_push($souscategories, $ssCatBodhrans);
 
-        $manager->persist($souscategorie6);
+        $manager->persist($ssCatBodhrans);
+
+        $ssCatTambours = new SousCategorie();
+        $ssCatTambours->setSouCatNom("Tambours");
+        $ssCatTambours->setCategorie($catPercu);
+
+        array_push($souscategories, $ssCatTambours);
+
+        $manager->persist($ssCatTambours);
+
 
         $fournisseurs = Array();
 
@@ -98,26 +119,13 @@ class Jeu1 extends Fixture
 
         };
 
-        $articles = Array();
+        /* Créer la liste d'articles
 
-        for($j=0; $j<20; $j++) {
-            $articles[$j] = new Article();
-            $articles[$j]->setArtNom($faker->word())
-                         ->setArtPrixHt($faker->randomFloat($nbMaxDecimals = 2, $min = 0.5, $max = 999.99))
-                         ->setArtTauxTva($faker->randomElement($array = array(20, 5.5)))
-                         ->setArtTva(($articles[$j]->getArtPrixHt())*($articles[$j]->getArtTauxTva())/100)
-                         ->setArtPrixTtc($articles[$j]->getArtPrixHt() + $articles[$j]->getArtTva())
-                         ->setArtPrixFournisseurHt($faker->randomFloat($nbMaxDecimals = 2, $min = 0, $max = $articles[$j]->getArtPrixHt() / 2))
-                         ->setArtPrixFournisseurTtc(($articles[$j]->getArtPrixFournisseurHt()) * (1 + $articles[$j]->getArtTauxTva() / 100))
-                         ->setArtStock($faker->randomDigit())
-                         ->setSousCategorie($faker->randomElement($array = $souscategories))
-                         ->setFournisseur($fournisseurs[$j%5]);
-            
-            $manager->persist($articles[$j]);
-            
-            
-        };
-
+        Vent : cornemuses, flûtes...
+        Cordes : harpes, guitares folk, violons, vielles à roue
+        Percussion : bodhran, bombo, tambours
+        
+        */
 
         $types = Array();
 
@@ -154,7 +162,6 @@ class Jeu1 extends Fixture
 
         }
 
-        $commandes = Array();
 
 
         $manager->flush();

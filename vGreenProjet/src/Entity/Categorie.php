@@ -18,6 +18,10 @@ class Categorie
     #[ORM\Column(type: 'string', length: 255)]
     private $catNom;
 
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $catImage;
+
+
     #[ORM\OneToMany(mappedBy: 'Categorie', targetEntity: SousCategorie::class)]
     private $sousCategories;
 
@@ -42,6 +46,19 @@ class Categorie
 
         return $this;
     }
+
+    public function getCatImage(): ?string
+    {
+        return $this->catNom;
+    }
+
+    public function setCatImage(string $catImange): self
+    {
+        $this->catImage = $catImage;
+
+        return $this;
+    }
+
 
     /**
      * @return Collection<int, SousCategorie>

@@ -18,6 +18,10 @@ class SousCategorie
     #[ORM\Column(type: 'string', length: 255)]
     private $souCatNom;
 
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $souCatImage;
+
+
     #[ORM\ManyToOne(targetEntity: Categorie::class, inversedBy: 'sousCategories')]
     private $Categorie;
 
@@ -45,6 +49,19 @@ class SousCategorie
 
         return $this;
     }
+
+    public function getSouCatImage(): ?string
+    {
+        return $this->souCatImage;
+    }
+
+    public function setSouCatImage(string $souCatImage): self
+    {
+        $this->souCatImage = $souCatImage;
+
+        return $this;
+    }
+
 
     public function getCategorie(): ?Categorie
     {
