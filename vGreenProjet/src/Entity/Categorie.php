@@ -49,10 +49,10 @@ class Categorie
 
     public function getCatImage(): ?string
     {
-        return $this->catNom;
+        return $this->catImage;
     }
 
-    public function setCatImage(string $catImange): self
+    public function setCatImage(string $catImage): self
     {
         $this->catImage = $catImage;
 
