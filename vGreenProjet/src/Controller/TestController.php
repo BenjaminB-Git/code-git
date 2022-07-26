@@ -9,6 +9,8 @@ use App\Repository\CategorieRepository;
 use App\Repository\SousCategorieRepository;
 use App\Entity\Categorie;
 use App\Entity\SousCategorie;
+use App\Entity\Article;
+
 
 
 
@@ -61,6 +63,17 @@ class TestController extends AbstractController
 
 
     }
+
+    #[Route('/article/{id}', name: 'article')]
+    public function article(Article $article){
+        return $this->render('test/article.html.twig',[
+            'controller_name' => 'TestController',
+            'article' => $article
+        ]);
+
+
+    }
+
 
 
 }

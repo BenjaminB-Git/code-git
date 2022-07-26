@@ -10,7 +10,7 @@
     <table class="table text-center row">
         {% for article in souscategorie.articles %}
         <tr>
-            <td><img height="300rem" src="{{ asset('images/articles/' ~ article.artPhoto) }}" alt="{{article.artNom}}"></td>
+            <td><a href="{{path('article', {'id': article.id})}}"><img height="300rem" src="{{ asset('images/articles/' ~ article.artPhoto) }}" alt="{{article.artNom}}"></a></td>
             <td class="text-left">
                 <b> {{article.artNom}} </b> <br>
                 {{article.artPrixTtc}}€ <br>
