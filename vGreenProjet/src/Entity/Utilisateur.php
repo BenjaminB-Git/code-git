@@ -55,6 +55,12 @@ class Utilisateur
     #[ORM\OneToMany(mappedBy: 'utilisateur', targetEntity: Commande::class, orphanRemoval: true)]
     private $commandes;
 
+    #[ORM\Column(type: 'string', length: 255, nullable: true)]
+    private $Password;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $Role = 'usager';
+
     public function __construct()
     {
         $this->commandes = new ArrayCollection();
@@ -235,6 +241,30 @@ class Utilisateur
                 $commande->setUtilisateur(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->Password;
+    }
+
+    public function setPassword(?string $Password): self
+    {
+        $this->Password = $Password;
+
+        return $this;
+    }
+
+    public function getRole(): ?string
+    {
+        return $this->Role;
+    }
+
+    public function setRole(string $Role): self
+    {
+        $this->Role = $Role;
 
         return $this;
     }

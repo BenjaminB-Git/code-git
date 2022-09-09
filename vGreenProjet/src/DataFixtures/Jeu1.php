@@ -412,26 +412,6 @@ class Jeu1 extends Fixture
 
         array_push($types, $type2);
 
-        $utilisateurs = Array();
-
-        for($k = 0; $k<12; $k++) {
-            $utilisateurs[$k] = new Utilisateur();
-            $utilisateurs[$k]->setUtiNom($faker->lastName())
-                             ->setUtiPrenom($faker->firstName())
-                             ->setUtiDateNaissance($faker->dateTime($max = '2001-01-01'))
-                             ->setUtiAdresse($faker->streetAddress())
-                             ->setUtiCodePostal('80000')
-                             ->setUtiCommune('Amiens')
-                             ->setUtiMail(strtolower($utilisateurs[$k]->getUtiPrenom()) . '.' . strtolower($utilisateurs[$k]->getUtiNom()) . '@' . $faker->freeEmailDomain)
-                             ->setUtiTelephoneMobile($faker->mobileNumber)
-                             ->setType($faker->randomElement($array = $types));
-            
-            $manager->persist($utilisateurs[$k]);
-
-
-        }
-
-
 
         $manager->flush();
     }

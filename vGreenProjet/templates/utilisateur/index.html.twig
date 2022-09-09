@@ -20,6 +20,8 @@
                 <th>UtiMail</th>
                 <th>UtiTelephoneFixe</th>
                 <th>UtiTelephoneMobile</th>
+                <th>Password</th>
+                <th>Role</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -38,6 +40,8 @@
                 <td>{{ utilisateur.utiMail }}</td>
                 <td>{{ utilisateur.utiTelephoneFixe }}</td>
                 <td>{{ utilisateur.utiTelephoneMobile }}</td>
+                <td>{{ utilisateur.Password }}</td>
+                <td>{{ utilisateur.Role }}</td>
                 <td>
                     <a href="{{ path('app_utilisateur_show', {'id': utilisateur.id}) }}">show</a>
                     <a href="{{ path('app_utilisateur_edit', {'id': utilisateur.id}) }}">edit</a>
@@ -45,7 +49,7 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="13">no records found</td>
+                <td colspan="15">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
