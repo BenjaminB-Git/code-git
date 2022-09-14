@@ -15,7 +15,7 @@
             </td>
             <td>
                 <b>{{ article.artNom }}</b> <br>
-                {{ article.artPrixTtc }} <br><br>
+                {{ article.artPrixTtc }} €<br><br>
                 {{ article.artDescription | raw }} <br><br>
 
             <a class='btn btn-success' href='{{ path("cart_add",{id: article.id})}}'>Ajouter au panier</button>
