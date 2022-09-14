@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CartController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+    
+    <h1>Votre panier</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Produit</th>
+                <th>Prix</th>
+                <th>Quantité</th>
+                <th>Total</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for item in datacart %}
+                <tr>
+                    <td>
+                        <img height="200rem" src="{{asset('images/articles/' ~ item.article.artPhoto) }}" alt="">
+                    </td>
+                    <td>{{item.article.artNom}}</td>
+                    <td class="text-right">{{item.article.artPrixTtc}} €</td>
+                    <td>{{item.quantite}}</td>
+                    <td class="text-right">{{item.quantite * item.article.artPrixTtc }} €</td>
+                    <td>
+                        <a href="{{path('cart_add', {id: item.article.id})}}" class="btn btn-success">
+                            Ajouter
+                        </a>
+                        <a href="{{path('cart_remove', {id: item.article.id})}}" class="btn btn-warning">
+                            Retirer 1
+                        </a>
+                        <a href="{{path('cart_delete', {id: item.article.id})}}" class="btn btn-danger">
+                            Supprimer
+                        </a>
+
+
+                    </td>
+                </tr>
+            {% else %}
+            <tr>
+                <td colspan='5' class='text-center'>Panier vide</td>
+            </tr>
+            {% endfor %}
+        <tfoot>
+            <tr>
+            <td colspan="4">Total</td>
+            <td class="text-right">{{total}} €</td>
+            <td></td>
+            </tr>
+        </tfoot>
+
+            
+        </tbody>
+    </table>
+    {{ dump() }}
+
+{% endblock %}

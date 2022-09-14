@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ souscategorie.souCatNom }}{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h1>{{ souscategorie.souCatNom }}</h1>
+
+    <table class="table text-center row">
+        {% for article in souscategorie.articles %}
+        <tr>
+            <td><a href="{{path('article', {'id': article.id})}}"><img height="300rem" src="{{ asset('images/articles/' ~ article.artPhoto) }}" alt="{{article.artNom}}"></a></td>
+            <td class="text-left">
+                <b> {{article.artNom}} </b> <br>
+                {{article.artPrixTtc}}€ <br>
+            </td>
+        </tr>
+
+        {% else %}
+            Oups, pas encore d'article dans cette catégorie
+        {% endfor %}
+    </table>
+
+
+
+</div>
+
+
+{% endblock %}

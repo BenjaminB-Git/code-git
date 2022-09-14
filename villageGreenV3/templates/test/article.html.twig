@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ article.artNom }}{% endblock %}
+
+{% block body %}
+
+
+<div class="container">
+    <h1>{{article.artNom}}</h1>
+
+    <table class="table row">
+        <tr>
+            <td>
+                <img height="500rem" src="{{asset('images/articles/' ~ article.artPhoto) }}" alt="">
+            </td>
+            <td>
+                <b>{{ article.artNom }}</b> <br>
+                {{ article.artPrixTtc }} <br><br>
+                {{ article.artDescription | raw }} <br><br>
+
+            <a class='btn btn-success' href='{{ path("cart_add",{id: article.id})}}'>Ajouter au panier</button>
+            </td>
+
+        </tr>
+
+
+
+    </table>
+
+
+
+
+
+</div>
+
+{% endblock %}

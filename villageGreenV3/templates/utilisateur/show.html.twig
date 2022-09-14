@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Utilisateur{% endblock %}
+
+{% block body %}
+    <h1>Utilisateur</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ utilisateur.id }}</td>
+            </tr>
+            <tr>
+                <th>UtiNom</th>
+                <td>{{ utilisateur.utiNom }}</td>
+            </tr>
+            <tr>
+                <th>UtiPrenom</th>
+                <td>{{ utilisateur.utiPrenom }}</td>
+            </tr>
+            <tr>
+                <th>UtiDateNaissance</th>
+                <td>{{ utilisateur.utiDateNaissance ? utilisateur.utiDateNaissance|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>UtiAdresse</th>
+                <td>{{ utilisateur.utiAdresse }}</td>
+            </tr>
+            <tr>
+                <th>UtiAdresse2</th>
+                <td>{{ utilisateur.utiAdresse2 }}</td>
+            </tr>
+            <tr>
+                <th>UtiAdresse3</th>
+                <td>{{ utilisateur.utiAdresse3 }}</td>
+            </tr>
+            <tr>
+                <th>UtiCodePostal</th>
+                <td>{{ utilisateur.utiCodePostal }}</td>
+            </tr>
+            <tr>
+                <th>UtiCommune</th>
+                <td>{{ utilisateur.utiCommune }}</td>
+            </tr>
+            <tr>
+                <th>UtiMail</th>
+                <td>{{ utilisateur.utiMail }}</td>
+            </tr>
+            <tr>
+                <th>UtiTelephoneFixe</th>
+                <td>{{ utilisateur.utiTelephoneFixe }}</td>
+            </tr>
+            <tr>
+                <th>UtiTelephoneMobile</th>
+                <td>{{ utilisateur.utiTelephoneMobile }}</td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td>{{ utilisateur.Password }}</td>
+            </tr>
+            <tr>
+                <th>Role</th>
+                <td>{{ utilisateur.Role }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_utilisateur_index') }}">back to list</a>
+
+    <a href="{{ path('app_utilisateur_edit', {'id': utilisateur.id}) }}">edit</a>
+
+    {{ include('utilisateur/_delete_form.html.twig') }}
+{% endblock %}
