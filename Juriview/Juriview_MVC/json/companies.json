@@ -1,0 +1,232 @@
+[
+	{
+		"id": 25700195,
+		"name": "BirdCorp",
+		"creation_date": "2024-06-25T11:03:51+02:00",
+		"address_street": "13 rue des sueurs froides",
+		"address_zip_code": "01000",
+		"address_city": "Bourg-en-Bresse",
+		"address_region": null,
+		"address_country": "France",
+		"comments": "",
+		"is_supplier": false,
+		"is_prospect": false,
+		"is_customer": true,
+		"currency": "EUR",
+		"language": "fr",
+		"thirdparty_code": "4113",
+		"intracommunity_number": "",
+		"supplier_thirdparty_code": null,
+		"siret": "14151617181920",
+		"internal_id": "",
+		"isB2C": false,
+		"customer_balance": 0,
+		"business_manager": {
+			"id": 449243,
+			"name": "Benjamin Blondel",
+			"email": "benjaminblondel1312@gmail.com"
+		},
+		"custom_fields": [],
+		"categories": [],
+		"employees": [
+			{
+				"id": 24590487,
+				"gender": "",
+				"firstname": "Alfred",
+				"lastname": "Hitchcock",
+				"email": "ahitch@fauxmail.com",
+				"phone_number": "",
+				"cellphone_number": "0555555555",
+				"is_billing_contact": false,
+				"job": "",
+				"custom_fields": []
+			}
+		],
+		"documents": []
+	},
+	{
+		"id": 25564941,
+		"name": "Alice Bob",
+		"creation_date": "2024-06-20T12:49:15+02:00",
+		"address_street": "1 Avenue du Général de Gaulle",
+		"address_zip_code": "75001",
+		"address_city": "¨Paris",
+		"address_region": "",
+		"address_country": "France",
+		"comments": "string",
+		"is_supplier": false,
+		"is_prospect": false,
+		"is_customer": true,
+		"currency": "EUR",
+		"language": "fr",
+		"thirdparty_code": "411000",
+		"intracommunity_number": "FR1X987654321",
+		"supplier_thirdparty_code": null,
+		"siret": "10111213141516",
+		"internal_id": "B555-66B8-344A-FF00",
+		"isB2C": true,
+		"customer_balance": -360,
+		"business_manager": null,
+		"custom_fields": {
+			"myCustomField": 1
+		},
+		"categories": [
+			{
+				"id": 181659,
+				"name": "B2B"
+			}
+		],
+		"employees": [
+			{
+				"id": 24454839,
+				"gender": "",
+				"firstname": "Alice",
+				"lastname": "Bob",
+				"email": "alice@axonaut.com",
+				"phone_number": "0111131415",
+				"cellphone_number": "0608101214",
+				"is_billing_contact": false,
+				"job": "Directrice",
+				"custom_fields": []
+			}
+		],
+		"documents": []
+	},
+	{
+		"id": 25561841,
+		"name": "Claire Rousseau",
+		"creation_date": "2024-06-20T10:55:31+02:00",
+		"address_street": "5 rue de la gare",
+		"address_zip_code": "31500",
+		"address_city": "Toulouse",
+		"address_region": "",
+		"address_country": "France",
+		"comments": "string",
+		"is_supplier": false,
+		"is_prospect": true,
+		"is_customer": true,
+		"currency": "EUR",
+		"language": "fr",
+		"thirdparty_code": "411000",
+		"intracommunity_number": "FR1X123456789",
+		"supplier_thirdparty_code": null,
+		"siret": "1234567891012",
+		"internal_id": "A254-5851-486H-HEA5",
+		"isB2C": true,
+		"customer_balance": 0,
+		"business_manager": null,
+		"custom_fields": {
+			"myCustomField": 1
+		},
+		"categories": [
+			{
+				"id": 181659,
+				"name": "B2B"
+			}
+		],
+		"employees": [
+			{
+				"id": 24452081,
+				"gender": "",
+				"firstname": "Claire",
+				"lastname": "Rousseau",
+				"email": "claire@axonaut.com",
+				"phone_number": "0102030405",
+				"cellphone_number": "0605040302",
+				"is_billing_contact": false,
+				"job": "CSM",
+				"custom_fields": []
+			}
+		],
+		"documents": []
+	},
+	{
+		"id": 25561341,
+		"name": "Fournisseur démo",
+		"creation_date": "2024-06-20T10:36:47+02:00",
+		"address_street": "15 rue du Louvre",
+		"address_zip_code": "75001",
+		"address_city": "Paris",
+		"address_region": null,
+		"address_country": null,
+		"comments": "\n                    A pignon sur rue pour l'achat de telle marchandiseFait du golf comme moi, on a négocié une remise sur le green",
+		"is_supplier": true,
+		"is_prospect": false,
+		"is_customer": false,
+		"currency": "EUR",
+		"language": "fr",
+		"thirdparty_code": "4111",
+		"intracommunity_number": null,
+		"supplier_thirdparty_code": "4011",
+		"siret": null,
+		"internal_id": null,
+		"isB2C": null,
+		"business_manager": {
+			"id": 449243,
+			"name": "Benjamin Blondel",
+			"email": "benjaminblondel1312@gmail.com"
+		},
+		"custom_fields": [],
+		"categories": [],
+		"employees": [
+			{
+				"id": 24451631,
+				"gender": "",
+				"firstname": "Jean",
+				"lastname": "Dupuis",
+				"email": "jean.dupuis@fauxfournisseur.com",
+				"phone_number": null,
+				"cellphone_number": "514 375 0548",
+				"is_billing_contact": false,
+				"job": null,
+				"custom_fields": []
+			}
+		],
+		"documents": []
+	},
+	{
+		"id": 25561339,
+		"name": "Prospect\/Client démo",
+		"creation_date": "2024-06-20T10:36:47+02:00",
+		"address_street": "10 rue Ozenne",
+		"address_zip_code": "75001",
+		"address_city": "Paris",
+		"address_region": null,
+		"address_country": null,
+		"comments": "Pour supprimer les données importées, rendez-vous dans le menu 'Import' en haut à droite et 'Annuler' le.Rencontré à telle occasion,\ntrès sympa,\naime la moto.\nSes besoins sont ceci et cela",
+		"is_supplier": false,
+		"is_prospect": true,
+		"is_customer": true,
+		"currency": "EUR",
+		"language": "fr",
+		"thirdparty_code": "4112",
+		"intracommunity_number": null,
+		"supplier_thirdparty_code": null,
+		"siret": "12345678901234",
+		"internal_id": null,
+		"isB2C": null,
+		"customer_balance": -192,
+		"business_manager": {
+			"id": 449243,
+			"name": "Benjamin Blondel",
+			"email": "benjaminblondel1312@gmail.com"
+		},
+		"custom_fields": [],
+		"categories": [],
+		"employees": [
+			{
+				"id": 24451633,
+				"gender": "",
+				"firstname": "Nicolas",
+				"lastname": "Dupont",
+				"email": "nicolas.dupont@fauxclient.com",
+				"phone_number": null,
+				"cellphone_number": "06.01.02.03.04",
+				"is_billing_contact": false,
+				"job": null,
+				"custom_fields": []
+			}
+		],
+		"documents": []
+	}
+]

@@ -1,0 +1,293 @@
+[
+	{
+		"id": 12936943,
+		"number": "F20240621-10001",
+		"order_number": null,
+		"date": "2024-06-21",
+		"sent_date": null,
+		"due_date": "2024-07-06",
+		"paid_date": null,
+		"delivery_date": null,
+		"last_update_date": "2024-06-21T09:35:50+02:00",
+		"pre_tax_amount": 300,
+		"tax_amount": 60,
+		"total": 360,
+		"deposits": {
+			"deposit_percent": null,
+			"deposit_flat": null
+		},
+		"discounts": {
+			"amount": 0,
+			"amount_with_tax": 0,
+			"comments": 0
+		},
+		"taxes": [
+			{
+				"rate": 20,
+				"amount": 60
+			}
+		],
+		"currency": "EUR",
+		"margin": 210,
+		"mandatory_mentions": "",
+		"payment_terms": "Par pr&eacute;l&egrave;vement ou par virement bancaire<br \/>Code B.I.C : xxxxxxxxxx<br \/>Code I.B.A.N : xxxxxxxxxxxxxxxxxxxxxxx",
+		"theme_id": 168971,
+		"outstanding_amount": 360,
+		"frequency_in_months": null,
+		"business_user": "Benjamin Blondel",
+		"public_path": "https:\/\/axonaut.com\/public\/invoice\/pdf\/17bb8d9cebfb25c977c8e7d0456cfddd5e44ebecc0792b42e887d4cdbcb2675d",
+		"paid_invoice_pdf": null,
+		"customer_portal_url": "https:\/\/axonaut.com\/document\/DY93J7HSNYA3VYKW",
+		"invoice_lines": [
+			{
+				"product_id": 16888193,
+				"product_name": "Marchandise démo",
+				"product_code": null,
+				"name": "Marchandise démo",
+				"price": 50,
+				"quantity": 6,
+				"unit": "m²",
+				"tax_rates": [
+					{
+						"id": 907633,
+						"rate": 20,
+						"name": "Taux normal",
+						"accounting_code": null
+					}
+				],
+				"details": "Ma marchandise<br \/>Dimensions : 50x60x45cm<br \/>Couleur : Verte",
+				"total_pre_tax_amount": 300,
+				"total_tax_amount": 60,
+				"total_amount": 360,
+				"chapter": null,
+				"discounts": {
+					"amount": 0,
+					"amount_with_tax": 0
+				},
+				"accounting_code": null,
+				"unit_job_costing": 15
+			}
+		],
+		"company": {
+			"id": 25564941,
+			"name": "Alice Bob",
+			"is_supplier": false,
+			"is_prospect": false,
+			"is_customer": true
+		},
+		"billing_address": {
+			"company_name": "Alice Bob",
+			"contact_name": "Alice Bob",
+			"street": "1 Avenue du Général de Gaulle",
+			"zip_code": "75001",
+			"city": "¨Paris",
+			"region": "",
+			"country": "France"
+		},
+		"delivery_address": {
+			"company_name": "",
+			"contact_name": "",
+			"street": "",
+			"zip_code": "",
+			"city": "",
+			"region": "",
+			"country": ""
+		},
+		"contract_id": null,
+		"project_id": null
+	},
+	{
+		"id": 12908429,
+		"number": "F20240620-10002 #DEMO#",
+		"order_number": null,
+		"date": "2024-06-20",
+		"sent_date": null,
+		"due_date": "2024-07-05",
+		"paid_date": null,
+		"delivery_date": null,
+		"last_update_date": "2024-06-20T10:36:49+02:00",
+		"pre_tax_amount": 100,
+		"tax_amount": 20,
+		"total": 120,
+		"deposits": {
+			"deposit_percent": null,
+			"deposit_flat": null
+		},
+		"discounts": {
+			"amount": 0,
+			"amount_with_tax": 0,
+			"comments": 0
+		},
+		"taxes": [
+			{
+				"rate": 20,
+				"amount": 20
+			}
+		],
+		"currency": "EUR",
+		"margin": 70,
+		"mandatory_mentions": "",
+		"payment_terms": "Par prélèvement ou par virement bancaire<br \/>Code B.I.C : xxxxxxxxxx<br \/>Code I.B.A.N : xxxxxxxxxxxxxxxxxxxxxxx",
+		"theme_id": 168971,
+		"outstanding_amount": 120,
+		"frequency_in_months": null,
+		"business_user": "Benjamin Blondel",
+		"public_path": "https:\/\/axonaut.com\/public\/invoice\/pdf\/8b0a72b82291dfede695ef8dbb8601e9eec70b7cc32ba83b1774d9301af24c73",
+		"paid_invoice_pdf": null,
+		"customer_portal_url": "https:\/\/axonaut.com\/document\/7SE7N9NRQGHY1D5R",
+		"invoice_lines": [
+			{
+				"product_id": 16888193,
+				"product_name": "Marchandise démo",
+				"product_code": null,
+				"name": "Marchandise démo",
+				"price": 50,
+				"quantity": 2,
+				"unit": "m²",
+				"tax_rates": [
+					{
+						"id": 907633,
+						"rate": 20,
+						"name": "Taux normal",
+						"accounting_code": null
+					}
+				],
+				"details": "Ma marchandise<br>Dimensions : 50x60x45cm<br\/>Couleur : Verte",
+				"total_pre_tax_amount": 100,
+				"total_tax_amount": 20,
+				"total_amount": 120,
+				"chapter": null,
+				"discounts": {
+					"amount": 0,
+					"amount_with_tax": 0
+				},
+				"accounting_code": null,
+				"unit_job_costing": 0
+			}
+		],
+		"company": {
+			"id": 25561339,
+			"name": "Prospect\/Client démo",
+			"is_supplier": false,
+			"is_prospect": true,
+			"is_customer": true
+		},
+		"billing_address": {
+			"company_name": "Prospect\/Client démo",
+			"contact_name": null,
+			"street": "10 rue Ozenne",
+			"zip_code": "75001",
+			"city": "Paris",
+			"region": null,
+			"country": null
+		},
+		"delivery_address": {
+			"company_name": null,
+			"contact_name": null,
+			"street": null,
+			"zip_code": null,
+			"city": null,
+			"region": null,
+			"country": null
+		},
+		"contract_id": 3108311,
+		"project_id": null
+	},
+	{
+		"id": 12908425,
+		"number": "F20240501-10001 #DEMO#",
+		"order_number": null,
+		"date": "2024-05-01",
+		"sent_date": null,
+		"due_date": "2024-05-16",
+		"paid_date": null,
+		"delivery_date": null,
+		"last_update_date": "2024-06-20T10:36:48+02:00",
+		"pre_tax_amount": 60,
+		"tax_amount": 12,
+		"total": 72,
+		"deposits": {
+			"deposit_percent": null,
+			"deposit_flat": null
+		},
+		"discounts": {
+			"amount": 0,
+			"amount_with_tax": 0,
+			"comments": 0
+		},
+		"taxes": [
+			{
+				"rate": 20,
+				"amount": 12
+			}
+		],
+		"currency": "EUR",
+		"margin": 30,
+		"mandatory_mentions": "",
+		"payment_terms": "Par prélèvement ou par virement bancaire<br \/>Code B.I.C : xxxxxxxxxx<br \/>Code I.B.A.N : xxxxxxxxxxxxxxxxxxxxxxx",
+		"theme_id": 168971,
+		"outstanding_amount": 72,
+		"frequency_in_months": null,
+		"business_user": "Benjamin Blondel",
+		"public_path": "https:\/\/axonaut.com\/public\/invoice\/pdf\/c7efdee1b84cc33c07f968a28f79941ded9250693728d109b694e1a5e9ec239f",
+		"paid_invoice_pdf": null,
+		"customer_portal_url": "https:\/\/axonaut.com\/document\/4S9MRDYMARCP53P8",
+		"invoice_lines": [
+			{
+				"product_id": 16888193,
+				"product_name": "Marchandise démo",
+				"product_code": null,
+				"name": "Marchandise démo",
+				"price": 30,
+				"quantity": 2,
+				"unit": "m²",
+				"tax_rates": [
+					{
+						"id": 907633,
+						"rate": 20,
+						"name": "Taux normal",
+						"accounting_code": null
+					}
+				],
+				"details": "Ma marchandise<br>Dimensions : 50x60x45cm<br\/>Couleur : Verte",
+				"total_pre_tax_amount": 60,
+				"total_tax_amount": 12,
+				"total_amount": 72,
+				"chapter": null,
+				"discounts": {
+					"amount": 0,
+					"amount_with_tax": 0
+				},
+				"accounting_code": null,
+				"unit_job_costing": 0
+			}
+		],
+		"company": {
+			"id": 25561339,
+			"name": "Prospect\/Client démo",
+			"is_supplier": false,
+			"is_prospect": true,
+			"is_customer": true
+		},
+		"billing_address": {
+			"company_name": "Prospect\/Client démo",
+			"contact_name": null,
+			"street": "10 rue Ozenne",
+			"zip_code": "75001",
+			"city": "Paris",
+			"region": null,
+			"country": null
+		},
+		"delivery_address": {
+			"company_name": null,
+			"contact_name": null,
+			"street": null,
+			"zip_code": null,
+			"city": null,
+			"region": null,
+			"country": null
+		},
+		"contract_id": 3108311,
+		"project_id": 815795
+	}
+]
